@@ -4,11 +4,11 @@
 
 ### Header background
 
-    "Eyes" from https://heropatterns.com/
+"Eyes" from https://heropatterns.com/
 
 ### Logo Image
 
-    "Menthe" by me. I have about three placeholder images I use and this is one of them.
+"Menthe" by me. I have about three placeholder images I use and this is one of them.
 
 ### Font
 
