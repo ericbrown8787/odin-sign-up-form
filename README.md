@@ -1,9 +1,16 @@
-# odin-sign-up-form
+# The Odin Project: Sign-Up form
 
-Sources:
-Font: Raleway
-https://fonts.google.com/specimen/Raleway
+## Sources
 
-Sidebar Background Image:
-By Alex Perez on Unsplash
-https://unsplash.com/photos/pEgsWN0kwbQ
+### Header background
+
+    "Eyes" from https://heropatterns.com/
+
+### Logo Image
+
+    "Menthe" by me. I have about three placeholder images I use and this is one of them.
+
+### Font
+
+"Inconsolata" from Google Fonts
+https://fonts.google.com/specimen/Inconsolata?category=Monospace

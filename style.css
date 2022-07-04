@@ -7,51 +7,94 @@
 }
 
 :root {
+  --body-background-color: #232323;
   --main-inline-padding: 2rem;
   --main-block-padding: 2rem;
+  --header-box-shadow: 20px -20px 20px black inset, -20px 20px 20px black inset;
   --ui-box-shadow: 5px 5px 9px #999;
 }
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
+  min-width: 100vw;
+  background: var(--body-background-color);
+  font-family: "Inconsolata", monospace;
   /* Find a better font this is not working */
 }
 
 header {
+  padding-inline: calc(var(--main-inline-padding) + 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   min-height: 100vh;
+  min-width: fit-content;
   max-width: 100%;
-  padding: 2rem;
-  background-image: url(sidebar-background.jpg);
-  grid-template-rows: 1fr 1fr;
+  background-color: #fdfbff;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%23c700ff' fill-opacity='0.52' fill-rule='evenodd'/%3E%3C/svg%3E");
   text-align: center;
+  box-shadow: var(--header-box-shadow);
 }
 
-header img {
-  margin: auto;
+.logo__image {
+  width: 350px;
+  max-width: 100%;
+  padding-block-start: 4rem;
 }
 
-header h1 {
-  margin: auto;
-  color: whitesmoke;
-  font-weight: bold;
+.logo__text {
+  background: rgb(0, 0, 0, 70%);
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #111;
+  font-size: 4rem;
+  color: white;
+}
+
+.logo__text--period {
+  color: magenta;
+  animation: period-pulse 1200ms ease-in-out infinite alternate;
+}
+
+@keyframes period-pulse {
+  0% {
+    opacity: 10%;
+  }
+  50% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 10%;
+  }
 }
 
 main {
+  padding-block: var(--main-block-padding);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  background: #efefef;
+
   min-height: 100vh;
+}
+
+p {
+  max-width: 70ch;
+}
+
+.intro-text {
+  color: whitesmoke;
 }
 
 .greeting,
 .cta,
 .reminder {
-  font-weight: bold;
   font-size: 1.3rem;
   line-height: 1.8;
+}
+
+.cta span {
+  font-style: oblique;
+  color: magenta;
 }
 
 section,
@@ -59,14 +102,24 @@ fieldset {
   padding-inline: var(--main-inline-padding);
 }
 
+form {
+  min-width: 100%;
+}
+.reminder {
+  font-size: 1.1rem;
+}
 fieldset {
-  display: grid;
-  justify-content: center;
-  gap: 1.2rem;
   background: #fff;
   padding-block: var(--main-block-padding);
   box-shadow: var(--ui-box-shadow);
   border: none;
+  min-width: 100%;
+}
+
+fieldset > div {
+  display: grid;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 .form-field > * {
@@ -74,12 +127,13 @@ fieldset {
 }
 
 label {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0.08rem;
 }
+
 .form-field input {
   font-size: 1.3rem;
   border-radius: 4px;
@@ -100,18 +154,14 @@ label {
   background-color: mediumorchid;
 }
 
-.logo {
-  width: 300px;
-  max-width: 100%;
-}
-
 @media screen and (min-width: 850px) {
   body {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  form {
+
+  fieldset > div {
     grid-template-columns: 1fr 1fr;
   }
   .reminder {
