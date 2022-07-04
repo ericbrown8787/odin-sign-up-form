@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Odin Sign-Up Form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +33,7 @@
         </p>
         <p class="cta">Come on meow. You <span>know</span> you want to.</p>
       </section>
-      <form>
+      <form id="form">
         <fieldset>
           <div>
             <div class="form-field">
@@ -55,6 +55,7 @@
             <div class="form-field">
               <label for="pass">Password</label>
               <input type="password" name="pass" id="pass" required />
+              <p id="error"></p>
             </div>
             <div class="form-field">
               <label for="confirm">Confirm Password</label>
@@ -70,4 +71,5 @@
       </form>
     </main>
   </body>
+  <script src="index.js"></script>
 </html>
